@@ -1,0 +1,52 @@
+# ========================
+# 通用系统文件
+# ========================
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+*.tmp
+*.bak
+
+# ========================
+# Ollama 相关
+# ========================
+/data/
+/models/
+*.bin
+*.gguf
+
+# ========================
+# Node.js 后端
+# ========================
+essay-backend/node_modules/
+essay-backend/.env
+essay-backend/npm-debug.log
+essay-backend/dist/
+essay-backend/.npm
+essay-backend/.cache
+
+# ========================
+# 前端项目
+# ========================
+essay-frontend/node_modules/
+essay-frontend/dist/
+essay-frontend/.env
+essay-frontend/.env.local
+essay-frontend/.vite/
+essay-frontend/.eslintcache
+essay-frontend/package-lock.json
+
+# ========================
+# IDE配置（VSCode）
+# ========================
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# ========================
+# 批处理文件（排除开发环境专用脚本）
+# ========================
+/start.bat
