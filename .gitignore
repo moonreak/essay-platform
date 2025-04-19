@@ -50,3 +50,4 @@ essay-frontend/package-lock.json
 # 批处理文件（排除开发环境专用脚本）
 # ========================
 /start.bat
+curl http://localhost:11434/api/tags
