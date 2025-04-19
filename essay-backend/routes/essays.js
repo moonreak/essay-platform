@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-
+const OllamaService = require('../services/ollamaService');
 // 获取历史记录
 router.get('/', async (req, res) => {
   try {
@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const { content } = req.body
-    
+    const sentiment = await OllamaService.analyzeSentiment(content.substring(0, 300));
     if (!content || content.trim().length < 10) {
       return res.error('作文内容不能少于10个字')
     }
@@ -42,6 +42,7 @@ router.post('/', async (req, res) => {
     console.error('提交失败:', error)
     res.error('提交失败，请稍后重试', 500)
   }
+  res.json({ sentiment });
 })
 
 // 删除作文
